@@ -13,6 +13,7 @@ XXXX-XX-XX
 
 **Bug fixes**
 
+- 1111_: Process.oneshot() is now thread safe.
 - 1354_: [Linux] disk_io_counters() fails on Linux kernel 4.18+.
 - 1357_: [Linux] Process' memory_maps() and io_counters() method are no longer
   exposed if not supported by the kernel.
@@ -20,6 +21,8 @@ XXXX-XX-XX
   EccoTheFlintstone)
 - 1370_: [Windows] improper usage of CloseHandle() may lead to override the
   original error code when raising an exception.
+- 1373_: incorrect handling of cache in Process.oneshot() context causes
+  Process instances to return incorrect results.
 - 1376_: [Windows] OpenProcess() now uses PROCESS_QUERY_LIMITED_INFORMATION
   access rights wherever possible, resulting in less AccessDenied exceptions
   being thrown for system processes.
